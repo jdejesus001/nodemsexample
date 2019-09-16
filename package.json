@@ -1,0 +1,24 @@
+{
+  "name": "nodemsexample",
+  "main": "server.js",
+  "description": "Dummy node microservice for graphql demo on OpenShift",
+  "version": "0.1.1",
+  "private": false,
+  "engines": {
+    "node": "6.*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdejesus001/nodemsexample.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.x",
+    "cors": "^2.8.5",
+    "express": "^4.15.x"
+  },
+  "author": "Jose De Jesus",
+  "license": "Apache-2.0"
+}

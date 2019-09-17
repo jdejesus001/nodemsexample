@@ -15,8 +15,6 @@
     "url": "https://github.com/jdejesus001/nodemsexample.git"
   },
   "dependencies": {
-    "body-parser": "^1.17.x",
-    "cors": "^2.8.5",
     "express": "^4.15.x"
   },
   "author": "Jose De Jesus",

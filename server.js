@@ -4,36 +4,22 @@
 ------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------
-  Variable Declarations
+  Variable and Constant Declarations
 ------------------------------------------------------------------*/
 var express = require("express");
 var app = express();
-var bodyParser = require('body-parser')
-var cors = require('cors');
-
-
-/*-----------------------------------------------------------------
-  Include CORS (cross-origin resource sharing) support
-------------------------------------------------------------------*/
-app.use(cors());
-
-/*-----------------------------------------------------------------
-  parse application/x-www-form-urlencoded
-------------------------------------------------------------------*/
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
-
-/*-----------------------------------------------------------------
-  parse application/json
-------------------------------------------------------------------*/
-app.use(bodyParser.json())
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 /*-----------------------------------------------------------------
   serve static files (index.html, images, css) from the 
   views directory
 ------------------------------------------------------------------*/
 app.use(express.static(__dirname + '/views'));
+
+app.get('/healthcheck', (req, res) => {
+  res.send('Microservice running ok\n');
+});
 
 /*-----------------------------------------------------------------
   GET: /users
@@ -50,12 +36,11 @@ app.get("/users", function (request, response) {
   Returns a list of countries
 ------------------------------------------------------------------*/
 app.get("/countries", function (request, response) {
-  var countries = ['Italy', 'Spain', 'United States', 'Germany', 'Australia', 'Hungary'];
+  var countries = ['Spain', 'Italy', 'United States', 'Germany', 'Australia', 'Hungary'];
   response.json(countries);
   return;
 });
 
-var port = process.env.PORT || 3000
-app.listen(port, function () {
-  console.log("To view your app, open this link in your browser: http://localhost:" + port);
+app.listen(PORT, HOST, function () {
+  console.log(`Running on http://${HOST}:${PORT}`)
 });

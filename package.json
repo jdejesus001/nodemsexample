@@ -15,7 +15,7 @@
     "url": "https://github.com/jdejesus001/nodemsexample.git"
   },
   "dependencies": {
-    "express": "^4.15.x"
+    "express": "^4.18.x"
   },
   "author": "Jose De Jesus",
   "license": "Apache-2.0"
